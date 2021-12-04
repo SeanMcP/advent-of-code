@@ -68,7 +68,7 @@ for i in range(0, len(binary_diagnostic[0])):
     if len(list_0) > len(list_1):
         co2_list = list_1
     else:
-        co2_list = list_0 # Flip this for C02
+        co2_list = list_0
 
 print('CO2 scrubber rating', co2_list)
 
