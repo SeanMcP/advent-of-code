@@ -18,6 +18,7 @@ class Card:
                 values[value] = square
         
         self.values = values
+        self.winner = False
 
 
 card_rows = []
@@ -65,9 +66,12 @@ for call in call_list:
             card.values[call]['checked'] = True
 
             if check_win(card, card.values[call]['location'][0], card.values[call]['location'][1]):
-                winners.append(card)
-    if len(winners) > 0:
+                if card.winner == False:
+                    winners.append(card)
+                    card.winner = True
+    if len(winners) == len(cards):
         last_called = call
         break
 
 print('part 1:', calculate_score(winners[0], last_called))
+print('part 2', calculate_score(winners[-1], last_called))
