@@ -21,12 +21,14 @@ lanternfish = []
 for i in input:
     lanternfish.append(Fish(i))
 
-for day in range(0, 80):
+# for day in range(0, 80):
+for day in range(0, 256):
     pending_count = 0
     for lf in lanternfish:
         if lf.age() == True:
             pending_count += 1
     for i in range(0, pending_count):
         lanternfish.append(Fish())
+    print('done with day', day)
 
-print('part 1:', len(lanternfish))
+print('part 1 or 2:', len(lanternfish))
